@@ -7,7 +7,18 @@
 
     <fragment
         android:id="@+id/nav_fragment_main"
-        android:name="com.task.noteapp.fragments.MainFragment"
+        android:name="com.task.noteapp.fragments.main.MainFragment"
         tools:layout="@layout/fragment_main" />
+
+    <dialog
+        android:id="@+id/noteEntryDialogFragment"
+        android:name="com.task.noteapp.fragments.input_edit.NoteInputEditDialogFragment"
+        android:label="noteEntryDialogFragment"
+        tools:layout="@layout/dialog_note_input_edit">
+        <argument
+            android:name="itemId"
+            android:defaultValue="-1L"
+            app:argType="long" />
+    </dialog>
 
 </navigation>

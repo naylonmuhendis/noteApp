@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <attr name="customFont" format="reference" />
+
+    <declare-styleable name="MyTextView">
+        <attr name="customFont" />
+    </declare-styleable>
+
+    <declare-styleable name="MyRecyclerView">
+        <attr name="rvDividerDrawable" format="reference" />
+        <attr name="rvDividerMode">
+            <flag name="none" value="0" />
+            <flag name="beginning" value="1" />
+            <flag name="middle" value="2" />
+            <flag name="end" value="4" />
+        </attr>
+        <attr name="rvPreviewLayout">
+            <enum name="list" value="0" />
+            <enum name="grid" value="1" />
+        </attr>
+        <attr name="rvExtraSpace">
+            <flag name="on" value="0" />
+            <flag name="off" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="MyPicker">
+        <attr name="arrayResId" format="reference" />
+        <attr name="headerText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="MyTextInputView">
+        <attr name="errorEnabled" format="boolean" />
+        <attr name="android:hint" />
+        <attr name="android:inputType" />
+        <attr name="android:imeOptions" />
+        <attr name="android:text" />
+        <attr name="android:textSize" />
+        <attr name="android:minEms" />
+        <attr name="android:maxLength" />
+        <attr name="android:maxLines" />
+
+    </declare-styleable>
+
+</resources>
