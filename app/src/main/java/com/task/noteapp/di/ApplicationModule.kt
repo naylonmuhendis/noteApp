@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Room
 import com.task.noteapp.data.ToDoDao
 import com.task.noteapp.data.ToDoDatabase
+import com.task.noteapp.data.repository.ToDoRepository
+import com.task.noteapp.data.repository.TodoRepositoryImp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,4 +31,9 @@ class ApplicationModule {
     fun provideToDoDao(db: ToDoDatabase): ToDoDao {
         return db.toDoDao()
     }
+
+    @Provides
+    @Singleton
+    fun provideToDoRepository(toDoDao: ToDoDao): ToDoRepository =
+        TodoRepositoryImp(toDoDao)
 }
