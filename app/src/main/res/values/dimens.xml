@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="scroll_extra_height">40dp</dimen>
-
+    <dimen name="app_space_mini">5dp</dimen>
     <dimen name="app_space_normal">10dp</dimen>
     <dimen name="app_space_large">20dp</dimen>
 

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="noteModel"
+            type="com.task.noteapp.data.models.NoteModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_space_mini"
+        android:paddingBottom="@dimen/app_space_mini"
+        android:background="@drawable/radius_11dp">
+
+        <TextView
+            android:id="@+id/titleTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/app_space_normal"
+            android:layout_marginTop="@dimen/app_space_mini"
+            android:layout_marginEnd="@dimen/app_space_normal"
+            android:layout_marginBottom="@dimen/app_space_mini"
+            android:padding="@dimen/app_space_normal"
+            android:text="@{noteModel.title}"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/descriptionTxt"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:text="AAAA" />
+
+        <TextView
+            android:id="@+id/descriptionTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/app_space_normal"
+            android:layout_marginTop="@dimen/app_space_mini"
+            android:layout_marginEnd="@dimen/app_space_normal"
+            android:layout_marginBottom="@dimen/app_space_mini"
+            android:padding="@dimen/app_space_normal"
+            android:text="@{noteModel.description}"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/imgUrlTxt"
+            app:layout_constraintTop_toBottomOf="@+id/titleTxt"
+            app:layout_goneMarginBottom="@dimen/app_space_large" />
+
+        <TextView
+            android:id="@+id/textView"
+            setTimeStamp="@{noteModel.createdDate}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/app_space_mini"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="15/02/1992" />
+
+        <TextView
+            android:id="@+id/editDateTxt"
+            setTimeStamp="@{noteModel.editDate}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/app_space_mini"
+            android:textSize="12sp"
+            android:visibility="@{noteModel.editDate == 0 ?  View.GONE : View.VISIBLE }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="15/02/1992"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/imgUrlTxt"
+            visibleGoneIsNotNullOrEmpty="@{noteModel.imgUrl}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/app_space_normal"
+            android:layout_marginTop="@dimen/app_space_mini"
+            android:layout_marginEnd="@dimen/app_space_normal"
+            android:layout_marginBottom="@dimen/app_space_mini"
+            android:padding="@dimen/app_space_normal"
+            android:text="@{noteModel.imgUrl}"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/editDateTxt"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionTxt"
+            tools:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -26,6 +26,7 @@ class NoteInputEditDialogFragment : BottomSheetDialogFragment() {
     var noteModel: NoteModel? = null
 
     companion object {
+        const val TAG = "NoteInputEditDialogFragment"
 
         const val NOTE_MODEL_KEY = "noteModel"
 
@@ -50,7 +51,6 @@ class NoteInputEditDialogFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        noteModel = arguments?.getParcelable(NOTE_MODEL_KEY) as NoteModel?
 
         noteModel?.let {
             binding.titleEdt.text = it.title
@@ -86,7 +86,9 @@ class NoteInputEditDialogFragment : BottomSheetDialogFragment() {
     private fun validateIsnull(inputView: MyTextInputView): Boolean {
 
         return if (inputView.text.isNotEmpty()) {
-            inputView.clearError()
+            if (inputView.errorEnabled) {
+                inputView.clearError()
+            }
             true
         } else {
             inputView.error = getString(R.string.input_warning)

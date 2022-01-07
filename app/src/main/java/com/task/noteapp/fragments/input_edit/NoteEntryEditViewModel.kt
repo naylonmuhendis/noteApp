@@ -19,8 +19,8 @@ class NoteEntryEditViewModel @Inject constructor(val repo: ToDoRepository) : Bas
     fun insertUpdateNote(noteModel: NoteModel) {
         viewModelScope.launch(Dispatchers.IO) {
             if (noteModel.id != 0) {
+                noteModel.editDate = System.currentTimeMillis()
                 repo.updateData(noteModel)
-
             } else {
                 repo.insertData(noteModel)
             }
@@ -33,9 +33,4 @@ class NoteEntryEditViewModel @Inject constructor(val repo: ToDoRepository) : Bas
             repo.deleteItem(toDoData)
         }
     }
-
-    init {
-
-    }
-
 }

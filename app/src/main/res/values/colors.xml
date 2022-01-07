@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bg_color">#f1f2f6</color>
-    <color name="input_view_bg_color">@color/white</color>
+    <color name="input_view_bg_color">@color/bg_color</color>
     <color name="error_color">#FF2D55</color>
     <color name="color_light_gray">#acb1c0</color>
     <color name="green">#4CAF50</color>
