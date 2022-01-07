@@ -34,6 +34,7 @@
             android:background="@drawable/radius_11dp"
             android:ellipsize="end"
             android:hint="@{hint}"
+            android:imeOptions="actionNext"
             android:inputType="textMultiLine"
             android:maxLength="100"
             android:maxLines="2"

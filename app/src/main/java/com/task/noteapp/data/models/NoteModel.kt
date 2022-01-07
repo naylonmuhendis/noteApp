@@ -11,7 +11,8 @@ data class NoteModel(
     @PrimaryKey(autoGenerate = true)
     var id: Int,
     var title: String,
-    val createdDate: Long = System.currentTimeMillis(),
-    var editDate: Long?,
     var description: String,
+    var imgUrl: String?,
+    val createdDate: Long = System.currentTimeMillis(),
+    var editDate: Long? = 0,
 ) : Parcelable

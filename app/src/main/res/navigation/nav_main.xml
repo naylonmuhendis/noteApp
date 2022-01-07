@@ -15,10 +15,7 @@
         android:name="com.task.noteapp.fragments.input_edit.NoteInputEditDialogFragment"
         android:label="noteEntryDialogFragment"
         tools:layout="@layout/dialog_note_input_edit">
-        <argument
-            android:name="itemId"
-            android:defaultValue="-1L"
-            app:argType="long" />
+
     </dialog>
 
 </navigation>

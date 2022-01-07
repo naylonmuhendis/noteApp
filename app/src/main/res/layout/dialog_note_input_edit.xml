@@ -27,53 +27,76 @@
             android:background="@color/color_light_gray"
             app:layout_constraintTop_toBottomOf="@id/closeBtn" />
 
-        <com.task.noteapp.components.MyTextInputView
-            android:id="@+id/titleEdt"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_space_normal"
-            android:hint="@string/title_hint"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/line"
-            tools:layout_height="48dp" />
+            app:layout_constraintTop_toBottomOf="@id/line">
 
-        <com.task.noteapp.components.MyTextInputView
-            android:id="@+id/descriptionEdt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_space_normal"
-            android:hint="@string/description_hint"
-            android:lineSpacingExtra="4dp"
-            android:maxLines="2"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titleEdt"
-            app:maxLines="2" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <com.task.noteapp.components.MyTextInputView
-            android:id="@+id/imgUrlEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_space_normal"
-            android:hint="@string/img_url_hint"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/descriptionEdt"
-            tools:text="@string/img_url_hint" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/saveBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_space_normal"
-            android:backgroundTint="@color/green"
-            android:text="@string/save"
-            android:textColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/imgUrlEdit">
+                <com.task.noteapp.components.MyTextInputView
+                    android:id="@+id/titleEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/app_space_normal"
+                    android:hint="@string/title_hint"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line"
+                    tools:layout_height="48dp" />
 
-        </androidx.appcompat.widget.AppCompatButton>
+                <com.task.noteapp.components.MyTextInputView
+                    android:id="@+id/descriptionEdt"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="@dimen/app_space_normal"
+                    android:hint="@string/description_hint"
+                    android:imeOptions="actionNext"
+                    android:lineSpacingExtra="4dp"
+                    android:maxLines="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/titleEdt"
+                    app:maxLines="2" />
+
+                <com.task.noteapp.components.MyTextInputView
+                    android:id="@+id/imgUrlEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/app_space_normal"
+                    android:hint="@string/img_url_hint"
+                    android:imeOptions="actionNext"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/descriptionEdt"
+                    tools:text="@string/img_url_hint" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/saveBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/app_space_normal"
+                    android:backgroundTint="@color/green"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/imgUrlEdit">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/saveBtn" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

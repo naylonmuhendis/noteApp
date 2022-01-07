@@ -9,7 +9,7 @@ import javax.inject.Singleton
 @Singleton
 class TodoRepositoryImp @Inject constructor(val toDoDao: ToDoDao) : ToDoRepository {
 
-    val getAllData: LiveData<List<NoteModel>> = toDoDao.getAllData()
+    override val allData = toDoDao.getAllData()
 
     override suspend fun insertData(noteModel: NoteModel) = toDoDao.insertData(noteModel)
 
@@ -18,5 +18,6 @@ class TodoRepositoryImp @Inject constructor(val toDoDao: ToDoDao) : ToDoReposito
     override suspend fun deleteItem(noteModel: NoteModel) = toDoDao.deleteItem(noteModel)
 
     override suspend fun deleteAll() = toDoDao.deleteAll()
+
 
 }

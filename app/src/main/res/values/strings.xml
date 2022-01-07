@@ -6,6 +6,7 @@
     <string name="save">Save</string>
     <string name="close">CLOSE</string>
     <string name="img_url_hint">Image Url</string>
+    <string name="input_warning">Please fill the empty areas</string>
 
     <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown

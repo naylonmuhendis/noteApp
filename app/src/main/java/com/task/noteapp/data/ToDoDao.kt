@@ -7,7 +7,7 @@ import com.task.noteapp.data.models.NoteModel
 @Dao
 interface ToDoDao {
 
-    @Query("SELECT * FROM todo_table ORDER BY editDate ASC")
+    @Query("SELECT * FROM todo_table ORDER BY createdDate,editDate ASC")
     fun getAllData(): LiveData<List<NoteModel>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
